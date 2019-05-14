@@ -29,12 +29,15 @@ function createNewNote() {
 console.log('createNewNote');
 createNewNote();
 
-// function createNewNote() {
-//   var noteList = new NoteList();
-//   // var note = new Note('Favourite drink: seltzer')
-//   content = 'Favourite drink: seltzer'
-//   noteList.newNote()
-//   assert.isTrue(noteList.returnAll()[0].displayText() === content)
-// }
-// console.log('createNewNote');
-// createNewNote()
+function viewNoteListHTML() {
+  var noteList = new NoteList();
+  noteList.createNewNote('Morgan');
+  noteList.createNewNote('Freeman');
+
+  var noteView = new NoteView(noteList);
+
+  var html = '<ul><li><div>Morgan</div></li><li><div>Freeman</div></li></ul>';
+  assert.isTrue(noteView.htmlString() === html);
+}
+console.log('viewNoteListHTML');
+viewNoteListHTML();
