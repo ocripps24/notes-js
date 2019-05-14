@@ -1,18 +1,18 @@
-(function(exports) {
-  function storeStringsAsNoteText() {
-    var note = new Note('Test');
+function storeStringsAsNoteText() {
+  var note = new Note('Test');
 
-    if (note.content !== 'Test') {
-      throw new Error("Expected 'Test' but instead got something else");
-    }
-  };
-
-  exports.storeStringsAsNoteText = storeStringsAsNoteText;
-
-})(this);
-
+  assert.isTrue(note.content === 'Test')
+};
+console.log('storeStringsAsNoteText');
 storeStringsAsNoteText();
 
+function checkDisplayText() {
+  var note = new Note('Banana')
+  assert.isTrue(note.displayText() === 'Banana')
+};
+
+console.log('checkDisplayText');
+checkDisplayText();
 
 // LE STIIFE
 
