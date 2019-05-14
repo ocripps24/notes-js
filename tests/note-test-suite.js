@@ -20,6 +20,15 @@ function returnAllNotes() {
 console.log('returnAllNotes');
 returnAllNotes()
 
+function createNewNote() {
+  var notelist = new NoteList();
+  notelist.createNewNote('Pears')
+  var note = notelist.notes[0];
+  assert.isTrue(note.displayText() === 'Pears');
+}
+console.log('createNewNote');
+createNewNote();
+
 // function createNewNote() {
 //   var noteList = new NoteList();
 //   // var note = new Note('Favourite drink: seltzer')
@@ -29,25 +38,3 @@ returnAllNotes()
 // }
 // console.log('createNewNote');
 // createNewNote()
-
-// LE STIIFE
-
-// (function(exports) {
-//
-//   exports.xxx = xxx;
-// })(this);
-
-
-// (function(exports) {
-//
-//   var assert = {
-//     isTrue: function(assertionToCheck) {
-//       if (!assertionToCheck) {
-//         throw new Error("Assertion failed: " + assertionToCheck + " is not truthy");
-//       }
-//     }
-//   };
-//
-//   exports.assert = assert;
-//
-// })(this);
