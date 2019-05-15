@@ -1,8 +1,4 @@
-
-
 (function(exports){
-
-
 
 var NoteController = function(notelist) {
   notelist.createNewNote('Favourite drink: seltzer')
@@ -16,39 +12,12 @@ NoteController.prototype = {
   }
 };
 
-
 exports.NoteController = NoteController;
 })(this);
-
 
 window.onload = function() {
   var element = document.getElementById('app');
   var notelist = new NoteList;
   var notecontroller = new NoteController(notelist);
-  console.log(notecontroller);
   element.innerHTML = notecontroller.renderHTML();
 };
-
-
-
-// (function(exports){
-//   var NoteController = function(notelist) {
-//     this.noteList = notelist
-//     notelist.createNewNote('testestest')
-//     notelistview = new NoteView(notelist)
-//   };
-//
-//   NoteController.prototype = {
-//     renderHTML: function(notelistview) {
-//       return notelistview.htmlString
-//     };
-//   };
-//   exports.NoteController = NoteController;
-// })(this);
-//
-//     window.onload = function() {
-//       var element = document.getElementById('app');
-//       var notelist = new NoteList;
-//       var notecontroller = new NoteController(notelist);
-//       element.innerHTML = notecontroller.renderHTML;
-//     };

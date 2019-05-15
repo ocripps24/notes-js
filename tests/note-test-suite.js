@@ -41,3 +41,12 @@ function viewNoteListHTML() {
 }
 console.log('viewNoteListHTML');
 viewNoteListHTML();
+
+function initializeNoteController() {
+  var noteList = new NoteList();
+  var noteController = new NoteController(noteList);
+
+  assert.isTrue(noteController instanceof NoteController)
+};
+console.log('initializeNoteController');
+initializeNoteController();
