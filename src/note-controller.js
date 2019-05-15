@@ -1,4 +1,54 @@
+
+
+(function(exports){
+
+
+
+var NoteController = function(notelist) {
+  notelist.createNewNote('Favourite drink: seltzer')
+  this.notelistview = new NoteView(notelist);
+};
+
+NoteController.prototype = {
+  renderHTML: function () {
+    var noteHtml = this.notelistview.htmlString();
+    return noteHtml;
+  }
+};
+
+
+exports.NoteController = NoteController;
+})(this);
+
+
 window.onload = function() {
   var element = document.getElementById('app');
-  element.innerHTML = 'howdy';
+  var notelist = new NoteList;
+  var notecontroller = new NoteController(notelist);
+  console.log(notecontroller);
+  element.innerHTML = notecontroller.renderHTML();
 };
+
+
+
+// (function(exports){
+//   var NoteController = function(notelist) {
+//     this.noteList = notelist
+//     notelist.createNewNote('testestest')
+//     notelistview = new NoteView(notelist)
+//   };
+//
+//   NoteController.prototype = {
+//     renderHTML: function(notelistview) {
+//       return notelistview.htmlString
+//     };
+//   };
+//   exports.NoteController = NoteController;
+// })(this);
+//
+//     window.onload = function() {
+//       var element = document.getElementById('app');
+//       var notelist = new NoteList;
+//       var notecontroller = new NoteController(notelist);
+//       element.innerHTML = notecontroller.renderHTML;
+//     };
