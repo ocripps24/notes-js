@@ -4,7 +4,7 @@
   };
 
   SingleNoteView.prototype.viewNote = function() {
-    var noteHTMLString = '<div>' + this.note.content + '</div>';
+    var noteHTMLString = `<div>${this.note.content}</div>`;
     return noteHTMLString;
   };
 
