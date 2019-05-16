@@ -19,5 +19,6 @@ window.onload = function() {
   var element = document.getElementById('app');
   var notelist = new NoteList;
   var notecontroller = new NoteController(notelist);
+  // var singlenoteview = new SingleNoteView(note);
   element.innerHTML = notecontroller.renderHTML();
 };

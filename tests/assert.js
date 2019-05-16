@@ -3,7 +3,7 @@ var assert = {
     if (!assertionToCheck) {
       throw new Error("Assertion failed: " + assertionToCheck + " is not truthy");
     } else {
-      console.log('- passed the test')
+      console.log('- passed the test ✅')
     }
   },
   arraysMatch: function(arrayOne, arrayTwo) {
@@ -15,6 +15,6 @@ var assert = {
         throw new Error("Assertion failed: array elements are different");
       }
     }
-    console.log('- passed the test')
+    console.log('- passed the test ✅')
   }
 };

@@ -33,9 +33,7 @@ function viewNoteListHTML() {
   var noteList = new NoteList();
   noteList.createNewNote('Morgan');
   noteList.createNewNote('Freeman');
-
   var noteView = new NoteView(noteList);
-
   var html = '<ul><li><div>Morgan</div></li><li><div>Freeman</div></li></ul>';
   assert.isTrue(noteView.htmlString() === html);
 }
@@ -50,3 +48,14 @@ function initializeNoteController() {
 };
 console.log('initializeNoteController');
 initializeNoteController();
+
+function testASingleNoteView() {
+  var note = new Note('Bambi');
+  // var noteList = new NoteList();
+  // noteList.createNewNote('Bambi');
+  var singleNoteView = new SingleNoteView(note);
+  var noteHtml = '<div>Bambi</div>';
+  assert.isTrue(singleNoteView.viewNote() === noteHtml);
+};
+console.log('testASingleNoteView');
+testASingleNoteView();
